@@ -85,24 +85,36 @@ layout: default
 
 # TrialForge: Same Pattern, Still Hands-On
 
-<div style="font-size: 24px;">
+<div style="font-size: 28px; line-height: 2;">
 
-**Prototype First** → Local Streamlit demo validated RAG concept
+**Prototype:** Local Streamlit validated RAG concept
 
-**Production Architecture** → 7 AWS stacks:
-- Auth (Cognito multi-tenant)
+**Production:** 7 AWS stacks deployed
+
+**Cost:** $116/month (compliance + observability)
+
+**Performance:** 280ms cold start, <2s P99
+
+**Same discipline** applied
+
+</div>
+
+---
+layout: default
+---
+
+# TrialForge Architecture
+
+<div style="font-size: 22px; line-height: 1.8;">
+
+**AWS Stacks:**
+- Cognito (multi-tenant auth)
 - OpenSearch (vector DB)
 - Bedrock (Claude + Titan)
 - S3 Data pipeline
 - Letta (conversation memory)
-- Observability (CloudWatch + X-Ray)
-- SageMaker (model registry ready)
-
-**Cost:** $116/month with compliance and observability from day one
-
-**Performance:** 280ms Lambda cold start, <2s P99 latency
-
-**Same discipline:** Scalability, reliability, performance designed in
+- CloudWatch + X-Ray
+- SageMaker (model registry)
 
 </div>
 
@@ -112,12 +124,12 @@ layout: center
 
 # Live Demo: TrialForge Architecture
 
-**[AWS Console Links]**
-- 📊 [CloudWatch Dashboard](https://us-east-2.console.aws.amazon.com/cloudwatch/home?region=us-east-2#dashboards/dashboard/TrialForge-Production)
-- 🔍 [X-Ray Service Map](https://us-east-2.console.aws.amazon.com/cloudwatch/home?region=us-east-2#xray:service-map/)
-- 🚀 [CodePipeline](https://us-east-2.console.aws.amazon.com/codesuite/codepipeline/pipelines/TrialForge-CDK-Pipeline/view?region=us-east-2)
-- 🌐 [Live UI](https://main.d1ovxpzawsegze.amplifyapp.com)
-- 💻 [GitHub Repository](https://github.com/Josh-thephillipsequation/trialforge)
+**AWS Console Links:**
+- [CloudWatch Dashboard](https://us-east-2.console.aws.amazon.com/cloudwatch/home?region=us-east-2#dashboards/dashboard/TrialForge-Production)
+- [X-Ray Service Map](https://us-east-2.console.aws.amazon.com/cloudwatch/home?region=us-east-2#xray:service-map/)
+- [CodePipeline](https://us-east-2.console.aws.amazon.com/codesuite/codepipeline/pipelines/TrialForge-CDK-Pipeline/view?region=us-east-2)
+- [Live UI](https://main.d1ovxpzawsegze.amplifyapp.com)
+- [GitHub Repository](https://github.com/Josh-thephillipsequation/trialforge)
 
 ---
 layout: section
@@ -227,13 +239,13 @@ layout: default
 
 # Capital One Outcome
 
-<div style="font-size: 32px; line-height: 2;">
+<div style="font-size: 38px; line-height: 2.5;">
 
-📉 **8-12 days → <1 day**
+**8-12 days → <1 day**
 
-👥 **300 engineers** self-service
+**300 engineers** self-service
 
-💬 **"We forgot releases were a problem"** ← killer quote
+**"We forgot releases were a problem"**
 
 </div>
 
@@ -308,19 +320,19 @@ layout: default
 
 # Brivo Outcome
 
-<div style="font-size: 32px; line-height: 2.5;">
+<div style="font-size: 30px; line-height: 2.3;">
 
-📉 **500 → 25 alerts** (95% reduction)
+**500 → 25 alerts** (95% reduction)
 
-📉 **25 pings/day → 2-3/week**
+**25 pings/day → 2-3/week**
 
-✅ Engineers stopped asking for days off
+Engineers stopped asking for days off
 
-✅ On-call became a **non-event**
+On-call became a **non-event**
 
-**incident.io:** Slack `/incident`, roles, routing, escalation
+**incident.io:** Slack `/incident` command
 
-**Lesson:** Signal > volume. On-call experience = retention.
+**Lesson:** Signal > volume
 
 </div>
 
@@ -328,22 +340,25 @@ layout: default
 layout: center
 ---
 
-# TrialForge Monitoring: Same Discipline
+# TrialForge Monitoring
 
-**[CloudWatch Dashboard](https://us-east-2.console.aws.amazon.com/cloudwatch/home?region=us-east-2#dashboards/dashboard/TrialForge-Production)**
-- Lambda invocations, duration, errors
+<div style="font-size: 26px; line-height: 2;">
+
+**Metrics tracked:**
+- Lambda performance
 - Bedrock token usage
-- **Custom: Confidence scores** (answer quality metric for RAG)
+- Custom: Confidence scores (RAG quality)
 
-**CloudWatch Alarms:**
-- High error rate >5%
-- High latency P99 >3s
-- Cost anomaly >$10/day
-- OpenSearch cluster red
+**Alarms:**
+- Error rate, latency, cost, cluster health
 
-**Every alarm has a threshold I can defend. Every alarm has an action.**
+**Every alarm has threshold + action**
 
-**No "g4data not doing super excellent" here.**
+No "g4data not doing super excellent" here
+
+**[Live CloudWatch Dashboard](https://us-east-2.console.aws.amazon.com/cloudwatch/home?region=us-east-2#dashboards/dashboard/TrialForge-Production)**
+
+</div>
 
 ---
 layout: section
