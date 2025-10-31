@@ -31,6 +31,28 @@ line2: Capital One | Modern Financial Core
 **Real stories** from production systems + **TrialForge** (proof I still code hands-on)
 
 ---
+layout: default
+---
+
+# Presentation Agenda
+
+<div style="font-size: 28px; line-height: 2.5;">
+
+**Q1 (8 min):** Architecture - Excella RFAD + Bento Platform
+
+**Q2 (8 min):** Deployment - 5am Docker Disaster + Lessons
+
+**Q3 (6 min):** CI/CD - Capital One Release Team Transformation
+
+**Q4 (8 min):** Monitoring - Brivo Alert Bankruptcy + incident.io
+
+**Q5 (6 min):** Scaling - Multi-Architecture + EFS→S3
+
+**TrialForge demos woven throughout**
+
+</div>
+
+---
 layout: section
 ---
 
@@ -480,6 +502,26 @@ background: https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=
 **Q4:** Declared alert bankruptcy at Brivo. 500 → 25 alerts. On-call became non-event. Built incident.io Slack-based response. TrialForge has same discipline.
 
 **Q5:** Scaled across EKS, ECS, K8s, OpenShift. Learned don't use EFS for ML, use S3. Bento reused 8 times. TrialForge architected for scale.
+
+</div>
+
+---
+layout: default
+---
+
+# Summary: How I Answered Your Five Questions
+
+<div style="font-size: 24px; line-height: 2.2;">
+
+**Q1:** Won $65M in 45 min. Bento across 8 projects. TrialForge hands-on.
+
+**Q2:** Learned from 3GB Docker disaster. Applied lessons.
+
+**Q3:** Capital One 8-12 days → <1 day. 300 engineers.
+
+**Q4:** Brivo 500→25 alerts. incident.io rollout.
+
+**Q5:** Multi-architecture scaling. EFS→S3 lesson.
 
 </div>
 
