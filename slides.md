@@ -80,61 +80,42 @@ No manual deployment steps
 </div>
 
 ---
-layout: default
+layout: center
 ---
 
 # TrialForge Architecture
 
+<div style="transform: scale(0.9);">
+
 ```mermaid
-graph TB
-    User[👤 User Browser]
+graph LR
+    User[👤 User] -->|HTTPS| UI[Next.js<br/>Amplify]
+    UI -->|JWT| Cognito[Cognito]
+    UI -->|Request| APIGW[API<br/>Gateway]
     
-    subgraph "Frontend"
-        UI[Next.js UI<br/>Amplify Hosted]
-    end
+    APIGW --> Lambda[Lambda<br/>Handler]
     
-    subgraph "Auth"
-        Cognito[AWS Cognito<br/>Multi-Tenant JWT]
-    end
+    Lambda --> Bedrock[Bedrock<br/>Titan+Claude]
+    Lambda --> OpenSearch[OpenSearch<br/>Vector RAG]
+    Lambda --> Letta[Letta<br/>Memory]
     
-    subgraph "API"
-        APIGW[API Gateway<br/>X-Ray Enabled]
-        Lambda[Lambda ChatHandler<br/>512MB]
-    end
+    Lambda -.->|Metrics| CW[CloudWatch]
+    Lambda -.->|Traces| XRay[X-Ray]
     
-    subgraph "AI/ML"
-        Bedrock[Bedrock<br/>Titan + Claude]
-        OpenSearch[OpenSearch EC2<br/>Vector Search]
-        Letta[Letta Agent<br/>DynamoDB]
-    end
+    classDef frontend fill:#1a237e,stroke:#fff,color:#fff,stroke-width:2px
+    classDef auth fill:#0d47a1,stroke:#fff,color:#fff,stroke-width:2px
+    classDef api fill:#01579b,stroke:#fff,color:#fff,stroke-width:2px
+    classDef aiml fill:#004d40,stroke:#fff,color:#fff,stroke-width:2px
+    classDef ops fill:#e65100,stroke:#fff,color:#fff,stroke-width:2px
     
-    subgraph "Ops"
-        CW[CloudWatch<br/>Dashboard + Alarms]
-        XRay[X-Ray Tracing]
-    end
-    
-    User -->|HTTPS| UI
-    UI -->|JWT| Cognito
-    UI -->|Request| APIGW
-    APIGW --> Lambda
-    Lambda --> Bedrock
-    Lambda --> OpenSearch
-    Lambda --> Letta
-    Lambda -.-> CW
-    APIGW -.-> XRay
-    
-    classDef frontend fill:#1a237e,stroke:#fff,color:#fff
-    classDef auth fill:#0d47a1,stroke:#fff,color:#fff
-    classDef api fill:#01579b,stroke:#fff,color:#fff
-    classDef aiml fill:#004d40,stroke:#fff,color:#fff
-    classDef ops fill:#e65100,stroke:#fff,color:#fff
-    
-    class UI frontend
+    class User,UI frontend
     class Cognito auth
     class APIGW,Lambda api
     class Bedrock,OpenSearch,Letta aiml
     class CW,XRay ops
 ```
+
+</div>
 
 ---
 layout: center
