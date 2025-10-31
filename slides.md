@@ -67,24 +67,19 @@ layout: default
 
 # Bento Platform: Production Architecture
 
-<div style="font-size: 22px;">
+<div style="font-size: 28px; line-height: 2;">
 
-**After winning, I built Bento**—a reusable ML platform for government projects.
+**Reusable ML platform for government projects**
 
-**Multi-Backend Support** (different agencies, different constraints):
-- EKS, ECS, vanilla K8s, OpenShift
-- FedRAMP requires AWS. Some agencies require on-prem. Some mandate Red Hat OpenShift.
+**Multi-Backend:** EKS, ECS, K8s, OpenShift
 
-**Architecture:**
-- **Researcher workstations**: EC2 + Jupyter with authentication
-- **Model storage**: SageMaker (when allowed) or S3
-- **Data**: S3 (each researcher isolated, no shared filesystem)
-- **Images**: From-scratch Docker (300-500MB vs 1.5GB+ base images)
-- **Deployment**: Ephemeral environments via CloudFormation (IaC)
+**Why?** Different agencies, different constraints
 
-**The Achievement:** First continuous deployment at a government site. Ephemeral environments—tear down and rebuild weekly using IaC. **Groundbreaking in 2016-2018 for government.**
+**Components:** EC2 workstations, S3 storage, from-scratch Docker images, ephemeral IaC environments
 
-**Reuse:** Bento used across **8 large projects** (USCIS, GEICO, DoD, ICE, eVerify, others)
+**Achievement:** **First continuous deployment at a government site**
+
+**Reuse:** **8 large projects** (USCIS, GEICO, DoD, ICE, eVerify)
 
 </div>
 
@@ -222,21 +217,19 @@ layout: default
 
 # Capital One Release Team: 8-12 Days → <1 Day
 
-<div style="font-size: 24px; line-height: 1.6;">
+<div style="font-size: 28px; line-height: 2;">
 
-**The Challenge:**
-Release Team stuck in critical path. Manual orchestration, tribal knowledge, ad-hoc each release. Their identity: **"We're the heroes who make releases happen."**
+**The Challenge:** Release Team bottleneck. Manual, tribal knowledge. Identity: **"We're the heroes"**
 
-**The Conflict:**
-We needed them to adopt new tooling. Problem? **Our tool was slower initially**. Tech leads had **verbal confrontation**: "Why adopt something slower?" vs "Your way doesn't scale."
+**The Conflict:** Our tool was slower initially. Tech leads had **verbal confrontation**
 
 **How We Won:**
-1. **Recognized their work** - made them co-owners, not "the problem"
-2. **Reframed**: "Free you up for innovation" not "replace you"
-3. **6-9 months persistence**: Tool went "not great" → "forgot it was a problem"
-4. **Made it undeniably better**: Faster AND more reliable
+1. Recognized their work (co-owners, not "problem")
+2. Reframed: "Free you up for innovation"
+3. 6-9 months persistence
+4. Made it undeniably better
 
-**The Guardrails:** Security scans, e2e tests, performance tests, cost controls, compliance. **Guardrails built INTO the platform, not into the process**. Engineers ship faster BECAUSE safety is automatic.
+**Guardrails INTO platform**, not into process. Ship faster BECAUSE safety is automatic.
 
 </div>
 
@@ -285,22 +278,21 @@ layout: default
 
 # Brivo: The Day I Declared Alert Bankruptcy
 
-<div style="font-size: 24px; line-height: 1.6;">
+<div style="font-size: 28px; line-height: 2;">
 
-**Context:** Brivo—cloud-based access control for Apple, Meta, Chick-fil-a. Mission-critical (people can't get into buildings if we're down).
+**Context:** Access control for Apple, Meta, Chick-fil-a. Mission-critical.
 
-**When I Joined:**
+**The Problem:**
 - **500 alerts**
-- On-call getting **25 pings/day** (200+ during incidents)
-- Example alert: **"g4data not doing super excellent"** (no runbook, no explanation)
-- Everyone piled on incident calls (CTO, multiple directors all troubleshooting together)
-- Engineers asking for **2-3 days off after every on-call shift**
+- **25 pings/day** (200+ during incidents)
+- Example: **"g4data not doing super excellent"** (no runbook)
+- Engineers asking for **2-3 days off after on-call**
 
 **What I Did:**
-1. Inventory: Listed all 500 alerts
-2. Asked teams: "Do you need this? What action do you take?"
-3. Set requirements: POC, description, runbook, proper severity
-4. Set deadline: 1 month—delete everything not justified
+1. Inventory all alerts
+2. Asked teams: "Do you need this? What action?"
+3. Required: POC, description, runbook, severity
+4. **Set deadline: 1 month—delete everything not justified**
 
 </div>
 
@@ -328,19 +320,19 @@ layout: default
 
 # Brivo Outcome
 
-<div style="font-size: 28px; line-height: 2;">
+<div style="font-size: 32px; line-height: 2.5;">
 
 📉 **500 → 25 alerts** (95% reduction)
 
-📉 **25 pings/day → 2-3/week** (90%+ reduction)
+📉 **25 pings/day → 2-3/week**
 
-✅ **Engineers stopped asking for days off**
+✅ Engineers stopped asking for days off
 
 ✅ On-call became a **non-event**
 
-**incident.io Rollout:** Slack-based incident management. `/incident` command opens channel, assigns roles (Commander, Scribe), smart routing, escalation policies.
+**incident.io:** Slack `/incident`, roles, routing, escalation
 
-**Lesson:** More alerts ≠ better visibility. **Signal matters.** If engineers ignore alerts, you have zero visibility. On-call experience is a retention issue.
+**Lesson:** Signal > volume. On-call experience = retention.
 
 </div>
 
