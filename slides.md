@@ -17,7 +17,7 @@ layout: about-me
 helloMsg: Hello!
 name: Josh Phillips
 imageSrc: /Pirate_Dog.png
-line1: Senior Engineering Manager - AI/ML Enablement & Platform Engineering
+line1: Senior Engineering Manager - Platform Deployment, Foundations & AI Enablement
 line2: Capital One | Modern Financial Core
 ---
 
