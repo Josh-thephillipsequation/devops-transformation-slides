@@ -41,23 +41,19 @@ layout: section
 layout: default
 ---
 
-# Excella RFAD: The 45-Minute Demo That Won $65M
+# Excella RFAD: Won $65M in 45 Minutes
 
-<div style="font-size: 24px; line-height: 1.6;">
+<div style="font-size: 32px; line-height: 2.2;">
 
-**The Challenge:**
-USCIS immigration fraud detection system. Technical evaluation: Deploy working system to AWS GovCloud **during our presentation**.
+**Deploy working fraud detection to AWS GovCloud during presentation**
 
-**What We Deployed (45 minutes):**
-- ✅ Fraud detection model (NLP on provided dataset)
-- ✅ Frontend web UI for case review
-- ✅ Backend APIs
-- ✅ Login portal (authentication)
-- ✅ **All in AWS GovCloud using approved tech**
+✅ Model + Frontend + Backend + Auth
 
-**My Role:** Infrastructure & CI/CD (the DevSecOps layer)
+✅ Live in 45 minutes
 
-**Outcome:** We won. Competitors brought slides. We brought working code.
+**My Role:** Infrastructure & CI/CD
+
+**Outcome:** Won $65M contract. Competitors brought slides. We brought code.
 
 </div>
 
@@ -136,20 +132,19 @@ layout: default
 
 # 5am Solutions: The Docker Disaster
 
-<div style="font-size: 24px; line-height: 1.6;">
+<div style="font-size: 32px; line-height: 2.2;">
 
-**Context:** Bioinformatics startup building clinical trial management system for Pfizer. I was Head of SRE.
+**Head of SRE** at bioinformatics startup
 
 **The Disaster:** **3GB+ Docker images**
-- Data scientists embedding pickle files directly in images
-- Every model update = rebuild entire 3GB image
-- Build times: 20-30 minutes
-- Deploy times: 10+ minutes just to pull images
-- Team working **60-70 hour weeks, through weekends**
 
-**The Honest Outcome:** Project failed. Funding pulled after phase 2. Out-competed by IBM.
+Builds: 20-30 min. Deploys: 10+ min.
 
-**Who Decided Microservices?** VP of Tech. Felt like **resume-driven development**—10-15 microservices for a team that barely knew Docker. Should've started with a monolith.
+Team: **60-70 hour weeks**
+
+**Outcome:** Project failed. Funding pulled.
+
+**Who decided microservices?** VP (resume-driven). Should've started with monolith.
 
 </div>
 
@@ -181,26 +176,19 @@ layout: default
 
 # TrialForge: Recent Deployment Challenges
 
-<div style="font-size: 24px;">
+<div style="font-size: 28px; line-height: 2;">
 
-Even with all that experience, I still hit deployment challenges:
+**Challenge 1:** HTML entities breaking LLM
 
-**Challenge 1: HTML Entities Breaking LLM**
-```typescript
-function normalizeText(text: string): string {
-  return text
-    .replace(/&#x([0-9A-Fa-f]+);/g, (_, hex) => 
-      String.fromCharCode(parseInt(hex, 16)))
-    .normalize('NFKC').trim();
-}
-```
-Clinical trial data had HTML entities. LLM saw gibberish. Discovered via CloudWatch Logs. Added normalization.
+**Challenge 2:** 768-dim vs 1024-dim embeddings
 
-**Challenge 2: Embedding Dimension Mismatch**
-Local: 768-dim. Bedrock: 1024-dim. Confidence scores dropped in prod. Re-indexed all data with Bedrock.
+**Challenge 3:** Metadata filters too restrictive
 
-**Challenge 3: Metadata Filters**
-Router filtered for publication sources, but data was clinical_trial type. Zero results. Debug logs caught it.
+**How discovered:** CloudWatch Logs + debug logging
+
+**How fixed:** Normalization, re-indexing, filter removal
+
+**Still solving challenges after 20 years**
 
 </div>
 
