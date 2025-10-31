@@ -298,23 +298,35 @@ layout: section
 layout: default
 ---
 
-# Brivo: The Day I Declared Alert Bankruptcy
+# Brivo: Alert Bankruptcy
 
-<div style="font-size: 28px; line-height: 2;">
+<div style="font-size: 32px; line-height: 2.5;">
 
-**Context:** Access control for Apple, Meta, Chick-fil-a. Mission-critical.
+**Context:** Access control for Apple, Meta, Chick-fil-a
 
 **The Problem:**
 - **500 alerts**
 - **25 pings/day** (200+ during incidents)
-- Example: **"g4data not doing super excellent"** (no runbook)
+- **"g4data not doing super excellent"** (no runbook)
 - Engineers asking for **2-3 days off after on-call**
 
-**What I Did:**
-1. Inventory all alerts
-2. Asked teams: "Do you need this? What action?"
-3. Required: POC, description, runbook, severity
-4. **Set deadline: 1 month—delete everything not justified**
+</div>
+
+---
+layout: default
+---
+
+# What I Did: Alert Bankruptcy Process
+
+<div style="font-size: 32px; line-height: 2.5;">
+
+1. **Inventory** all 500 alerts
+
+2. **Ask teams**: "Do you need this? What action?"
+
+3. **Require**: POC, description, runbook, severity
+
+4. **Set deadline**: 1 month—delete everything not justified
 
 </div>
 
