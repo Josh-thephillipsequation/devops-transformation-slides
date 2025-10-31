@@ -2,6 +2,9 @@
   "name": "xyz-presentation",
   "type": "module",
   "private": true,
+  "engines": {
+    "node": ">=22.0.0"
+  },
   "scripts": {
     "build": "slidev build",
     "dev": "slidev --open",
