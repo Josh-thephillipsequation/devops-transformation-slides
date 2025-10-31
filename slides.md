@@ -60,21 +60,21 @@ background: https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=
 
 <div v-click style="font-size: 32px; margin-top: 40px;">
 
-### 💰 Budget: Under $200/month
+### Budget: Under $200/month
 Currently at **$116/month**
 
 </div>
 
 <div v-click style="font-size: 32px; margin-top: 40px;">
 
-### 🔒 HIPAA Compliance
+### HIPAA Compliance
 Encryption, audit trails, validated controls
 
 </div>
 
 <div v-click style="font-size: 32px; margin-top: 40px;">
 
-### 🤖 Fully Automated
+### Fully Automated
 No manual deployment steps
 
 </div>
@@ -89,7 +89,7 @@ layout: center
 
 ```mermaid
 graph LR
-    User[👤 User] -->|HTTPS| UI[Next.js<br/>Amplify]
+    User[User<br/>Browser] -->|HTTPS| UI[Next.js<br/>Amplify]
     UI -->|JWT| Cognito[Cognito]
     UI -->|Request| APIGW[API<br/>Gateway]
     
@@ -127,11 +127,11 @@ layout: center
 
 I'm going to answer your **five questions** by showing you the **live AWS system**
 
-✅ **Q1: Architecture** → Real CloudFormation stacks  
-✅ **Q2: Model Deployment** → Live queries + traces  
-✅ **Q3: CI/CD** → Active pipelines + security gates  
-✅ **Q4: Monitoring** → CloudWatch dashboards + X-Ray  
-✅ **Q5: Scaling** → Lambda configs + cost breakdown  
+→ **Q1: Architecture** — Real CloudFormation stacks  
+→ **Q2: Model Deployment** — Live queries + traces  
+→ **Q3: CI/CD** — Active pipelines + security gates  
+→ **Q4: Monitoring** — CloudWatch dashboards + X-Ray  
+→ **Q5: Scaling** — Lambda configs + cost breakdown  
 
 </div>
 
@@ -226,11 +226,11 @@ background: https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=
 
 <div style="font-size: 26px; line-height: 2;">
 
-✅ **Multi-tenant RAG system** with 26,000 clinical trials indexed  
-✅ **$116/month** (42% under budget)  
-✅ **HIPAA controls** (encryption, audit trails, 7-year logs)  
-✅ **Fully automated CI/CD** (zero manual deployment steps)  
-✅ **Production observability** (CloudWatch, X-Ray, alarms)  
+• **Multi-tenant RAG system** with 26,000 clinical trials indexed  
+• **$116/month** (42% under budget)  
+• **HIPAA controls** (encryption, audit trails, 7-year logs)  
+• **Fully automated CI/CD** (zero manual deployment steps)  
+• **Production observability** (CloudWatch, X-Ray, alarms)  
 
 **As far as my wallet is concerned, this IS production.**
 
